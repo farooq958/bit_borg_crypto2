@@ -1,5 +1,6 @@
 import 'package:bit_borg_crypto/controllers/dashboardcontainerCubit.dart';
 import 'package:bit_borg_crypto/controllers/dashboardpage_cubit.dart';
+import 'package:bit_borg_crypto/controllers/newspage_cubit.dart';
 import 'package:bit_borg_crypto/controllers/successcontrollercubit.dart';
 import 'package:bit_borg_crypto/view/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => dashboardpageCubit(0)),
             BlocProvider<dashboardcontainerCubit>(
                 create: (BuildContext context) => dashboardcontainerCubit(false)),
+            BlocProvider<newspageCubit>(
+                create: (BuildContext context) => newspageCubit(0)),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

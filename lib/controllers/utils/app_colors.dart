@@ -10,4 +10,5 @@ static const Color textfieldcolor = Color(0xff2A2C39);
 static const Color textfieldtextcolor= Color(0xff7A7A7A);
 static const Color successcolor = Color(0xff00D563);
 static const Color unselectedbottomnaviagtioncolor = Color(0xffBFBFBF);
+static const Color negativecolor= Color(0xffFA3B40);
 }

@@ -21,6 +21,7 @@ class dashboard extends StatefulWidget {
 }
 
 class _dashboardState extends State<dashboard> {
+  PageController pagec =  PageController(initialPage: 0);
   Widget reusablebottomnavigationitems(IconData icons, String nameofpage) {
     return BlocBuilder<dashboardpageCubit, int>(
       builder: (context, state) {
@@ -28,28 +29,44 @@ class _dashboardState extends State<dashboard> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             nameofpage == "Gems"
-                ? Image.asset(
+                ? Expanded(
+                  child: Image.asset(
               'assets/images/gembtmn.png',
               width: 35.sp,
               height: 35.sp,
-            )
+            ),
+                )
             // SizedBox()
 
-                : IconButton(
-              icon: Icon(icons), color: appcolors.buttoncolor,
+                : Expanded(
+                  child: IconButton(
+              icon: Icon(icons), color: nameofpage=='Home'&&state==0? appcolors.buttoncolor:
+        nameofpage=='News'&&state==1? appcolors.buttoncolor
+            :nameofpage=='Signals'&&state==2? appcolors.buttoncolor :
+        nameofpage=='Gems'&&state==3? appcolors.buttoncolor
+            :
+        appcolors.unselectedbottomnaviagtioncolor,
               //  tooltip: 'Home',
               onPressed: () {},
             ),
+                ),
             nameofpage == "Gems"
                 ? SizedBox(
               height: 3.h,
             )
                 : const SizedBox(),
-            Text(
-              nameofpage,
-              style: GoogleFonts.montserrat(
-                  color: appcolors.buttoncolor, fontSize: 14),
-            )
+             Expanded(
+               child: Text(
+                nameofpage,
+                style: GoogleFonts.montserrat(
+                    color:nameofpage=='Home'&&state==0? appcolors.buttoncolor:
+                    nameofpage=='News'&&state==1? appcolors.buttoncolor
+                       :nameofpage=='Signals'&&state==2? appcolors.buttoncolor :
+                    nameofpage=='Gems'&&state==3? appcolors.buttoncolor
+                    :
+                    appcolors.unselectedbottomnaviagtioncolor, fontSize: 14),
+            ),
+             )
           ],
         );
       },
@@ -81,16 +98,20 @@ class _dashboardState extends State<dashboard> {
                           width: 18.5.sp,
                           height: 13.5.sp,
                         ))),
-                Expanded(
-                    child: Align(
-                        alignment: Alignment.centerRight,
-                        child: Text(
-                          'News',
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.bold),
-                        ))),
+                BlocBuilder<dashboardpageCubit, int>(
+                  builder: (context, state) {
+                    return Expanded(
+                        child: Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                             state==0 ?'Home':state==1?'News' : state== 2? "Signals":'Gems',
+                              style: GoogleFonts.montserrat(
+                                  color: Colors.white,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.bold),
+                            )));
+                  },
+                ),
                 Expanded(
                     child: Align(
                         alignment: Alignment.centerRight,
@@ -114,7 +135,7 @@ class _dashboardState extends State<dashboard> {
               child: ListView(
                 children: [
                   Container(
-                    height: 400.h,
+                    height: 700.h,
                     child: BlocBuilder<dashboardpageCubit, int>(
                       builder: (context, state) {
                         return PageView(
@@ -123,7 +144,7 @@ class _dashboardState extends State<dashboard> {
                                 .read<dashboardpageCubit>()
                                 .getincrementindex(state: value);
                           },
-                          controller: pagecontroller.pgecontrler,
+                          controller: pagecontroller.pagec,
                           children: const [
                             homescreen(),
                             newsscreen(),
@@ -248,10 +269,24 @@ class _dashboardState extends State<dashboard> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            reusablebottomnavigationitems(BitborgIcons.homebtmn, 'Home'),
-            reusablebottomnavigationitems(BitborgIcons.form, 'News'),
-            reusablebottomnavigationitems(BitborgIcons.signals, 'Signals'),
-            reusablebottomnavigationitems(BitborgIcons.diamond, 'Gems'),
+             Expanded(child: GestureDetector(onTap: ()
+                 {
+                  // pagecontroller.pgecontrler.jumpToPage(0);
+                   pagecontroller.pagec.jumpToPage(0);
+                 },child: reusablebottomnavigationitems(BitborgIcons.homebtmn, 'Home'))),
+            Expanded(child: GestureDetector(onTap: ()
+            {
+             // pagecontroller.pgecontrler.jumpToPage(1);
+            pagecontroller.pagec.jumpToPage(1);
+            },child: reusablebottomnavigationitems(BitborgIcons.form, 'News'))),
+             Expanded(child: GestureDetector(onTap: ()
+             {
+               pagecontroller.pagec.jumpToPage(2);
+             },child: reusablebottomnavigationitems(BitborgIcons.signals, 'Signals'))),
+             Expanded(child: GestureDetector(onTap: ()
+             {
+               pagecontroller.pagec.jumpToPage(3);
+             },child: reusablebottomnavigationitems(BitborgIcons.diamond, 'Gems'))),
           ],
         ),
       ),
