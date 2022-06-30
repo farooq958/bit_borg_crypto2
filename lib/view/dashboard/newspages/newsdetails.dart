@@ -1,5 +1,6 @@
 import 'package:bit_borg_crypto/controllers/utils/Bitborgicons.dart';
 import 'package:bit_borg_crypto/controllers/utils/app_colors.dart';
+import 'package:bit_borg_crypto/controllers/utils/shared_components/sharedcomponent.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ class newsdetails extends StatefulWidget {
 
 class newsdetailState extends State<newsdetails> {
   final Color Textcolor;
+  var shh= sharedcomponent();
   final String Textr;
   newsdetailState( this.Textcolor, this.Textr);
 
@@ -26,47 +28,7 @@ class newsdetailState extends State<newsdetails> {
 
 backgroundColor: (appcolors.primarycolor),
 appBar: AppBar(
-  title: Container(
-    height: 80.h,
-    width: 375.h,
-
-    color: appcolors.onboardingcontainercolor,
-
-    child: Padding(
-      padding:  EdgeInsets.only(right: 15.0.sp ,left: 15.sp),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(
-              flex: 0,
-              child: Align(
-                  alignment: Alignment.center,
-                  child:InkWell(onTap: (){
-                    Navigator.pop(context);
-                  }, child: Icon(BitborgIcons.arrow_right ,size: 20.sp,)) )),
-     Expanded(
-
-       child:  Align(
-         alignment: Alignment.centerRight,
-         child: Text('News',style: GoogleFonts.montserrat(
-    color: Colors.white,
-    fontSize: 18.sp,
-    fontWeight: FontWeight.bold),
-),
-       ),
-     ),
-          Expanded(
-              child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Image.asset(
-                    'assets/images/alaramwithorange.png',
-                    height: 26.sp,
-                  ))),
-          // const   Expanded(flex:0,child: Align( alignment: Alignment.topRight,child: Icon(BitborgIcons.brightness_1,color: Colors.deepOrange,)))
-        ],
-      ),
-    ),
-  ) ,
+  title: shh.reusableappbar(context, 'News'),
   backgroundColor: appcolors.onboardingcontainercolor,
 automaticallyImplyLeading: false,
 

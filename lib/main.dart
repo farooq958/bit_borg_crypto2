@@ -2,6 +2,7 @@ import 'package:bit_borg_crypto/controllers/alertCubit.dart';
 import 'package:bit_borg_crypto/controllers/dashboardcontainerCubit.dart';
 import 'package:bit_borg_crypto/controllers/dashboardpage_cubit.dart';
 import 'package:bit_borg_crypto/controllers/newspage_cubit.dart';
+import 'package:bit_borg_crypto/controllers/signal_cubit.dart';
 import 'package:bit_borg_crypto/controllers/successcontrollercubit.dart';
 import 'package:bit_borg_crypto/view/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => newspageCubit(0)),
             BlocProvider<alertCubit>(
                 create: (BuildContext context) => alertCubit(false)),
+            BlocProvider<signalCubit>(
+                create: (BuildContext context) => signalCubit(0)),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

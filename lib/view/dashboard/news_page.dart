@@ -31,7 +31,7 @@ var sharedc= sharedcomponent();
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    return SizedBox(
       height: 800.h,
       width: 400.w,
       child: BlocBuilder<newspageCubit, int>(
@@ -118,10 +118,10 @@ var sharedc= sharedcomponent();
                         SizedBox(
                           height: 0.02.sh,
                         ),
-                       sharedc.resuablecontainernews(context,appcolors.negativecolor, 'Negative'),
-                        sharedc.resuablecontainernews(context,appcolors.successcolor, 'Positive'),
-                        sharedc.resuablecontainernews(context,appcolors.lighttextcolor, 'Neutral'),
-                        sharedc.resuablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                       sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                        sharedc.reusablecontainernews(context,appcolors.successcolor, 'Positive'),
+                        sharedc.reusablecontainernews(context,appcolors.lighttextcolor, 'Neutral'),
+                        sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
                       ],
                     ),
                   )
@@ -215,19 +215,19 @@ var sharedc= sharedcomponent();
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.resuablecontainernews(
+                            sharedc.reusablecontainernews(
                                 context,appcolors.negativecolor, 'Negative'),
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.resuablecontainernews(
+                            sharedc.reusablecontainernews(
                                 context, appcolors.successcolor, 'Positive'),
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.resuablecontainernews(
+                            sharedc.reusablecontainernews(
                                 context, appcolors.lighttextcolor, 'Neutral'),
-                            sharedc.resuablecontainernews(
+                            sharedc.reusablecontainernews(
                                 context, appcolors.negativecolor, 'Negative'),
                           ],
                         );
