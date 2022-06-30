@@ -1,3 +1,4 @@
+import 'package:bit_borg_crypto/controllers/alertCubit.dart';
 import 'package:bit_borg_crypto/controllers/dashboardcontainerCubit.dart';
 import 'package:bit_borg_crypto/controllers/dashboardpage_cubit.dart';
 import 'package:bit_borg_crypto/controllers/newspage_cubit.dart';
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => dashboardcontainerCubit(false)),
             BlocProvider<newspageCubit>(
                 create: (BuildContext context) => newspageCubit(0)),
+            BlocProvider<alertCubit>(
+                create: (BuildContext context) => alertCubit(false)),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
