@@ -2,7 +2,7 @@
 
 import 'package:bit_borg_crypto/controllers/utils/app_colors.dart';
 import 'package:bit_borg_crypto/view/dashboard/newspages/newsdetails.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +13,7 @@ import '../../alertCubit.dart';
 import '../Bitborgicons.dart';
 
 class sharedcomponent{
-void  Alerty(BuildContext context, String TTexty, String Texty,String imagepath ,int check) {
+void  Alerty(BuildContext context, String TTexty, String Texty,String imagepath ,int check,int check2) {
   var alertdialog = AlertDialog(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     insetPadding: EdgeInsets.all(10.sp),
@@ -69,11 +69,11 @@ void  Alerty(BuildContext context, String TTexty, String Texty,String imagepath 
             children: [
               Center(
                 child: Container(
-                  alignment: Alignment(-0.2,0.03),
+                  alignment:check2==0? Alignment(-0.2,0.03):Alignment(-0.9, 0),
                   width: 235.0,
                   height: 44.0,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color: appcolors.lighttextcolor, border: Border.all(width: 1.0, color: appcolors.lighttextcolor,), ),
-                  child:Text('Separate coin with "," (BTC,ETH)',style: GoogleFonts.montserrat(fontSize: 12.0, color:Colors.white, letterSpacing: 0.12, fontWeight: FontWeight.w300, height: 1.5, ),),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color:check2==0? appcolors.lighttextcolor: appcolors.textfieldcolor, border: Border.all(width: 1.0, color: appcolors.lighttextcolor,), ),
+                  child:Text( check2==0?'Separate coin with "," (BTC,ETH)':"Email",style: GoogleFonts.montserrat(fontSize: 12.0, color:Colors.white, letterSpacing: 0.12, fontWeight: FontWeight.w300, height: 1.5, ),),
                 ),
               ),
 
@@ -85,7 +85,7 @@ void  Alerty(BuildContext context, String TTexty, String Texty,String imagepath 
                   width: 235.0.w,
                   height: 44.0.h,
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(4.0), color: appcolors.buttoncolor, ),
-                  child:Text('Add Coin',style: GoogleFonts.montserrat(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w500, height: 1.88, )),
+                  child:Text( check2==0?'Add Coin':"Let Me Know",style: GoogleFonts.montserrat(fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w500, height: 1.88, )),
                 ),
               )
             ],
@@ -342,7 +342,7 @@ child: Center(child: Text(scalporhold,style: GoogleFonts.montserrat(color: Color
         Positioned(
           right: 30.sp,
           top:check==0? 15.sp: 40.sp,
-          child: Container(
+          child: SizedBox(
             width: 60.w,
             height: 48.h,
             child: ListView(

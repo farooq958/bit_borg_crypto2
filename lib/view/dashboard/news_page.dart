@@ -162,7 +162,7 @@ var sharedc= sharedcomponent();
                                         child: InkWell(
                                           onTap: () {
                                             context.read<alertCubit>().boolcheck(state: true);
-                                         sharedc.Alerty(context, "Favourite Coins", "3 Coins Found",'assets/images/Group 1107.png',1);
+                                         sharedc.Alerty(context, "Favourite Coins", "3 Coins Found",'assets/images/Group 1107.png',1,0);
                                           },
                                           child: Text(
                                             'Favourite Coins',
@@ -189,7 +189,7 @@ var sharedc= sharedcomponent();
                                           {
                                             context.read<alertCubit>().boolcheck(state: true);
 
-                                        sharedc.Alerty(context, "Add Your Favourite Coins", "E.g BTC, Eth, BNB etc","assets/images/bitcoingroup.png",0);
+                                        sharedc.Alerty(context, "Add Your Favourite Coins", "E.g BTC, Eth, BNB etc","assets/images/bitcoingroup.png",0,0);
                                           },
                                           child: Text(
                                             '+ Add Coin',

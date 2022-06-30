@@ -13,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../controllers/utils/shared_components/sharedcomponent.dart';
+
 class dashboard extends StatefulWidget {
   const dashboard({Key? key}) : super(key: key);
 
@@ -22,6 +24,7 @@ class dashboard extends StatefulWidget {
 
 class _dashboardState extends State<dashboard> {
   PageController pagec =  PageController(initialPage: 0);
+  var sc= sharedcomponent();
   Widget reusablebottomnavigationitems(IconData icons, String nameofpage) {
     return BlocBuilder<dashboardpageCubit, int>(
       builder: (context, state) {
@@ -217,10 +220,17 @@ class _dashboardState extends State<dashboard> {
                                 ),
                                 Expanded(
                                     flex: 0,
-                                    child: Text(' Buy a Premium',
-                                      style: GoogleFonts.montserrat(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),))
+                                    child: InkWell(
+                                      onTap: ()
+                                      {
+                                        sc.Alerty(context, "Coming soon", "The premium subscription will be launch soon \n To get notified Please enter your email below.","assets/images/time-quarterpast.png",0,1);
+
+                                      },
+                                      child: Text(' Buy a Premium',
+                                        style: GoogleFonts.montserrat(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),),
+                                    ))
                                 ,
 
                               ],
