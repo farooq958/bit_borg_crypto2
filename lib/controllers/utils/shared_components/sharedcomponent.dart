@@ -2,6 +2,7 @@
 
 import 'package:bit_borg_crypto/controllers/utils/app_colors.dart';
 import 'package:bit_borg_crypto/view/dashboard/newspages/newsdetails.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -138,9 +139,9 @@ Widget reusablecontainernews(BuildContext context ,Color texttcolor, String Text
       Navigator.push(context , MaterialPageRoute(builder: (context) => newsdetails(Textcolor: texttcolor,Textr: Textt,)));
 
     },
-    child: Container(
-      width: 354.w,
-      height: 160.h,
+    child:  Container(
+      //width: 384.w,
+      height: 165.sp,
       decoration: BoxDecoration(
           color: appcolors.onboardingcontainercolor,
           borderRadius: BorderRadius.circular(4)),
@@ -157,98 +158,97 @@ Widget reusablecontainernews(BuildContext context ,Color texttcolor, String Text
                       width: 68.w,
                       height: 67.h,
                     ))),
-            Padding(
-              padding: EdgeInsets.only(left: 8.0.sp),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 0,
-                        child: Container(
-                          alignment: Alignment.center,
-                          width: 65.0.w,
-                          height: 23.0.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4.0),
-                            color: const Color(0xFF232736),
-                          ),
-                          child: Text(
-                            Textt,
-                            style: GoogleFonts.montserrat(
-                              fontSize: 12.0,
-                              color: texttcolor,
-                              fontWeight: FontWeight.w500,
+              Expanded(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 0,
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 65.0.w,
+                            height: 23.0.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4.0),
+                              color: const Color(0xFF232736),
+                            ),
+                            child: Text(
+                              Textt,
+                              style: GoogleFonts.montserrat(
+                                fontSize: 12.0,
+                                color: texttcolor,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
+                       
+                        Expanded(
+                            flex: 0,
+                            child: Align(
+                                alignment: Alignment.topRight,
+                                child: Text(
+                                  "20 July,2021",
+                                  style: GoogleFonts.montserrat(
+                                      fontSize: 12,
+                                      color: appcolors.lighttextcolor),
+                                )))
+                      ],
+                    ),
+                    Expanded(child: SizedBox(height: 15.h)),
+                    Expanded(
+                        flex: 0,
+                        child: Text(
+                          "Bitcoin's ‘Upgrade for the Ages'",
+                          style: GoogleFonts.montserrat(
+                              color: Colors.white, fontWeight: FontWeight.w700,fontSize: 14.sp),
+                        )),
+                    Expanded(
+                        flex: 0,
+                        child: Padding(
+                          padding: EdgeInsets.only(right: 110.0.sp),
+                          child: Text(
+                            'Taproot is Here ',
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white, fontWeight: FontWeight.w600),
+                          ),
+                        )),
+                    Expanded(
+                      child: SizedBox(
+                        height: 10.h,
                       ),
-                      SizedBox(
-                        width: 90.w,
-                      ),
-                      Expanded(
-                          flex: 0,
-                          child: Align(
-                              alignment: Alignment.topRight,
-                              child: Text(
-                                "20 July,2021",
-                                style: GoogleFonts.montserrat(
-                                    fontSize: 12,
-                                    color: appcolors.lighttextcolor),
-                              )))
-                    ],
-                  ),
-                  SizedBox(height: 15.h),
-                  Expanded(
-                      flex: 0,
-                      child: Text(
-                        "Bitcoin's ‘Upgrade for the Ages'",
-                        style: GoogleFonts.montserrat(
-                            color: Colors.white, fontWeight: FontWeight.w700),
-                      )),
-                  Expanded(
-                      flex: 0,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 110.0.sp),
+                    ),
+                    Expanded(
+                        flex: 0,
                         child: Text(
-                          'Taproot is Here ',
+                          'The best Bitcoin casinos offer almost ',
                           style: GoogleFonts.montserrat(
-                              color: Colors.white, fontWeight: FontWeight.w700),
-                        ),
-                      )),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Expanded(
-                      flex: 0,
-                      child: Text(
-                        'The best Bitcoin casinos offer almost ',
-                        style: GoogleFonts.montserrat(
-                            color: appcolors.lighttextcolor, fontSize: 12),
-                      )),
-                  Expanded(
-                      flex: 0,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Text(
-                          'instant withdrawals, zero transaction  ',
-                          style: GoogleFonts.montserrat(
-                              color: appcolors.lighttextcolor, fontSize: 12),
-                        ),
-                      )),
-                  Expanded(
-                      flex: 0,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 12.0.sp),
-                        child: Text(
-                          'fees, anonymous transfers, as well ',
-                          style: GoogleFonts.montserrat(
-                              color: appcolors.lighttextcolor, fontSize: 12),
-                        ),
-                      ))
-                ],
+                              color: appcolors.lighttextcolor, fontSize: 12.sp),
+                        )),
+                    Expanded(
+                        flex: 0,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 12.0),
+                          child: Text(
+                            'instant withdrawals, zero transaction  ',
+                            style: GoogleFonts.montserrat(
+                                color: appcolors.lighttextcolor, fontSize: 12),
+                          ),
+                        )),
+                    Expanded(
+                        flex: 0,
+                        child: Padding(
+                          padding: EdgeInsets.only(right: 12.0.sp),
+                          child: Text(
+                            'fees, anonymous transfers, as well ',
+                            style: GoogleFonts.montserrat(
+                                color: appcolors.lighttextcolor, fontSize: 12.sp),
+                          ),
+                        ))
+                  ],
+                ),
               ),
-            ),
           ],
         ),
       ),
@@ -453,6 +453,14 @@ flex: 2,
               ),
             ),
           ),
+          middleText=="Notifications"?
+          Expanded(
+              child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    height: 26.sp,
+                  )))
+              :
           Expanded(
               child: Align(
                   alignment: Alignment.centerRight,
@@ -519,5 +527,272 @@ Widget reusabletargetconatiner()
 
 }
 
+
+Widget reusabledrawerchild()
+{
+return ListView(
+  children: [
+        Padding(
+          padding:  EdgeInsets.only(left: 60.0.sp,right: 15.sp,top: 20.sp),
+          child: Column(
+      children:  <Widget>[
+     const   Expanded( flex:0,child:Align(alignment: Alignment.topRight, child: Icon(BitborgIcons.cross_circle,color: appcolors.buttoncolor,)))
+          ,
+          Expanded(flex: 0, child: SizedBox(height: 0.06.sh ,)),
+          Expanded( flex: 0,
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+            width: 40.w,
+            height: 40.h,
+            decoration: const BoxDecoration(
+            shape: BoxShape.circle
+      ,color: appcolors.buttoncolor
+          ) ,
+          child: Icon(BitborgIcons.user,color: Colors.white,size: 20.r,),
+          ),
+              )),
+    Expanded(flex: 0, child: SizedBox(height: 0.009.sh ,)),
+    Expanded(flex: 0, child: Align(alignment: Alignment.topLeft, child: Text('Muzamil Afridi',style: GoogleFonts.montserrat(fontSize: 16.0.sp, color: Colors.white, fontWeight: FontWeight.w700, ),)),)
+          ,
+          Expanded(flex: 0, child: Align(alignment: Alignment.topLeft, child: Text('mfkhan816@gmail.com',style: GoogleFonts.montserrat(fontSize: 12.0.sp, color: appcolors.lighttextcolor, letterSpacing: 0.12, fontWeight: FontWeight.w300, height: 1.5, ),)))
+
+       , Expanded(flex: 0, child: SizedBox(height: 0.009.sh ,)),
+
+          Expanded(flex: 0, child: Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              width: 174.27.w,
+              height: 40.0.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: appcolors.drawerbuttoncolor
+
+              ),
+              child: Row(
+                children: <Widget>[
+                  Expanded(flex: 0, child: SizedBox(width: 0.05.sw ,)),
+                  Expanded(flex:0,child: Icon(BitborgIcons.diamond,color: appcolors.buttoncolor,size: 22.r,)),
+
+
+              Expanded(flex: 0, child: SizedBox(width: 0.02.sw ,)),
+                  Expanded(child: Text('Premium User',style: GoogleFonts.montserrat(fontWeight: FontWeight.w500,fontSize: 14.sp ,color: appcolors.buttoncolor),) )
+
+                ],
+              ),
+            ),
+          )),
+
+
+      ],
+    ),
+        ),
+   const Divider(
+      color: appcolors.textfieldcolor,
+    ),
+
+     SizedBox(
+       height: 0.5.sh,
+       child: Padding(
+         padding: EdgeInsets.only(right: 90.sp,left: 0),
+         child: Column(
+          children: [
+            Expanded(flex: 0, child: SizedBox(height: 0.03.sh,)),
+            Expanded(flex:0,
+              child: SizedBox(
+                width: 99.0.w,
+                height: 30.99.h,
+                child: Row(
+
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: <Widget>[
+                    //Expanded( flex:0,child: SizedBox(width: 0.0001.sw,)),
+                   Expanded( flex:0,child: Align(alignment:Alignment.topLeft , child: Padding(
+                     padding:  EdgeInsets.only(left: 8.0.sp),
+                     child: const Icon(BitborgIcons.homebtmn,color: Colors.white,),
+                   )))
+                    ,
+                   // Expanded(child: SizedBox(width: 0.003.sw,)),
+                    Expanded(flex: 0, child: Text('Home',style: GoogleFonts.montserrat(fontSize: 16.0.sp, color: Colors.white, fontWeight: FontWeight.w500, ),)),],
+                ),
+              ),
+            ),
+            Expanded(flex: 0, child: SizedBox(height: 0.03.sh,)),
+            Expanded(
+              flex:0,
+              child: Padding(
+                padding:  EdgeInsets.only(left: 32.0.sp),
+                child: SizedBox(
+                  width: 300.0.w,
+                  height: 30.99.h,
+
+
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 19.sp),
+                    child: Row(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                      children: <Widget>[
+                       // Expanded( flex:0,child: SizedBox(width: 0.001.sw,)),
+                         Expanded( flex:0,child: Align(alignment:Alignment.topLeft ,child: Padding(
+                          padding: EdgeInsets.only(left: 12.0.sp),
+                          child:const Icon(BitborgIcons.headset__1_,color: Colors.white,),
+                        )))
+                        ,
+                        // Expanded(child: SizedBox(width: 0.003.sw,)),
+                        Expanded(flex: 0, child: Padding(
+                          padding:  EdgeInsets.only(left: 12.0.sp),
+                          child: Text('Contact Us',style: GoogleFonts.montserrat(fontSize: 16.0.sp, color: Colors.white, fontWeight: FontWeight.w500, ),),
+                        )),],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(flex: 0, child: SizedBox(height: 0.03.sh,)),
+            Expanded(
+              flex:0,
+              child: SizedBox(
+                width: 120.0.w,
+                height: 30.99.h,
+                child: Row(
+
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: <Widget>[
+                    Expanded( flex:0,child: SizedBox(width: 0.003.sw,)),
+                    const Expanded( flex:0,child: Align(alignment:Alignment.topLeft , child: Icon(BitborgIcons.settings__1_,color: Colors.white,)))
+                    ,
+                    // Expanded(child: SizedBox(width: 0.003.sw,)),
+                    Expanded(flex: 0, child: Text('Settings',style: GoogleFonts.montserrat(fontSize: 16.0.sp, color: Colors.white, fontWeight: FontWeight.w500, ),)),],
+                ),
+              ),
+            ),
+             Expanded(flex: 0, child: SizedBox(height: 0.03.sh,)),
+            Expanded(
+              flex:0,
+              child: SizedBox(
+                width: 99.0.w,
+                height: 30.99.h,
+                child: Row(
+
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: <Widget>[
+                    Expanded( flex:0,child: SizedBox(width: 0.003.sw,)),
+                    const Expanded( flex:0,child: Align(alignment:Alignment.topLeft , child: Icon(BitborgIcons.sign_out_alt,color: Colors.white,)))
+                    ,
+                    // Expanded(child: SizedBox(width: 0.003.sw,)),
+                    Expanded(flex: 0, child: Text('Logout',style: GoogleFonts.montserrat(fontSize: 16.0.sp, color: Colors.white, fontWeight: FontWeight.w500, ),)),],
+                ),
+              ),
+            ),
+            Expanded( child: Align(
+              alignment: Alignment.bottomCenter,
+              child:  Padding(
+                padding:  EdgeInsets.only(left: 60.0.sp),
+                child: Container(
+                  width: 174.27.w,
+                  height: 40.0.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: appcolors.upgradeplancolor
+
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(flex: 0, child: SizedBox(width: 0.05.sw ,)),
+                      Expanded(flex:0,child: Icon(BitborgIcons.diamond,color:Colors.black,size: 22.r,)),
+
+
+                      Expanded(flex: 0, child: SizedBox(width: 0.02.sw ,)),
+                      Expanded(child:  Text('Upgrade Plan',style: GoogleFonts.montserrat(fontWeight: FontWeight.w500,fontSize: 14.sp ,color: Colors.black),) )
+
+                    ],
+                  ),
+                ),
+              ),
+            )),
+          //  SizedBox(height: 0.001.sh,),
+          ],
+    ),
+       ),
+     )
+
+  ],
+);
+
+
+
+
+
+
+}
+
+Widget reusablenotificationlist()
+{
+  return Container(
+width:327.w ,
+    height:88.h ,
+decoration: BoxDecoration(
+  color: appcolors.onboardingcontainercolor,
+  borderRadius: BorderRadius.circular(8)
+),
+    
+    child: Row(
+      children: <Widget>[
+        
+        Expanded(child: Align(alignment: Alignment.centerLeft, child: Image.asset('assets/images/newsdetailimage.png' ,width: 69.w,height: 68.h, fit: BoxFit.fitHeight,)))
+        ,Expanded(
+            flex: 3,
+            child: Column(
+          
+          children: [
+
+            Expanded(
+
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Row(
+                    children: <Widget>[
+                      Expanded(flex: 2,
+                        child: Text(
+                          '20 July, 2021       07 : 30 am',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 10.0,
+                            color: const Color(0xFF646464),
+                            letterSpacing: 0.1,
+                            fontWeight: FontWeight.w500,
+                            height: 1.8,
+                          ),
+                        ),
+                      ),
+                      Expanded( child:Align( alignment: Alignment.centerRight,child: Container( margin: EdgeInsets.only(right: 15.sp), width: 10.sp,height: 10.sp,decoration: const BoxDecoration(shape: BoxShape.circle ,color: appcolors.buttoncolor), ))
+
+
+                      )
+                      
+                      
+
+
+                    ],
+                  ),
+              ),
+            ),
+
+                      Expanded(child:  Align(alignment: Alignment.centerLeft, child: Text('Bitcoin\'s ‘Upgrade for the Ages\nTaproot is Here',style: GoogleFonts.montserrat(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.w500, ),)))
+
+,
+            Expanded( child: Align(alignment: Alignment.centerLeft, child: Text('Click to read',style: GoogleFonts.montserrat(fontSize: 12.0, color:appcolors.buttoncolor, fontWeight: FontWeight.w500, ),)))
+          ],
+          
+        ))
+        
+      ],
+    ),
+  );
+}
 }
 

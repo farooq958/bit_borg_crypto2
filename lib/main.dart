@@ -5,15 +5,20 @@ import 'package:bit_borg_crypto/controllers/newspage_cubit.dart';
 import 'package:bit_borg_crypto/controllers/signal_cubit.dart';
 import 'package:bit_borg_crypto/controllers/successcontrollercubit.dart';
 import 'package:bit_borg_crypto/view/splash/splashscreen.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'controllers/walk_through_cubit.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(
+  DevicePreview(
+
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -42,7 +47,9 @@ class MyApp extends StatelessWidget {
             BlocProvider<signalCubit>(
                 create: (BuildContext context) => signalCubit(0)),
           ],
-          child: MaterialApp(
+          child: const MaterialApp(
+            builder: DevicePreview.appBuilder,
+            useInheritedMediaQuery: true,
             debugShowCheckedModeBanner: false,
             home: splashscreen(),
           ),

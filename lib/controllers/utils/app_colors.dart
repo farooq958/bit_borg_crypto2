@@ -14,4 +14,7 @@ static const Color negativecolor= Color(0xffFA3B40);
 static const Color targetsignalcolor = Color(0xff8DC351);
 static const Color redsignalcolor = Color(0xffFF4D52);
   static const Color signalyellowishcolor = Color(0xffB5C248);
+  static const Color drawerbuttoncolor = Color(0xff343641);
+  static const Color upgradeplancolor = Color(0xffFFC63F);
+
 }

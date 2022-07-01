@@ -14,6 +14,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../controllers/utils/shared_components/sharedcomponent.dart';
+import 'notification_screen.dart';
 
 class dashboard extends StatefulWidget {
   const dashboard({Key? key}) : super(key: key);
@@ -79,8 +80,14 @@ class _dashboardState extends State<dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer:  Drawer(
+        backgroundColor: appcolors.primarycolor,
+child: sc.reusabledrawerchild(),
+
+      )
+      ,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+      //  automaticallyImplyLeading: false,
         backgroundColor: appcolors.onboardingcontainercolor,
         title: Container(
           height: 40.h,
@@ -96,10 +103,16 @@ class _dashboardState extends State<dashboard> {
                     flex: 0,
                     child: Align(
                         alignment: Alignment.center,
-                        child: Image.asset(
-                          'assets/images/hamburgericon.png',
-                          width: 18.5.sp,
-                          height: 13.5.sp,
+                        child: InkWell(
+                          onTap: ()
+                          {
+                          //  Scaffold.of(context).openDrawer();
+
+                          },
+                          child: Container(
+                            width: 18.5.sp,
+                            height: 13.5.sp,
+                          ),
                         ))),
                 BlocBuilder<dashboardpageCubit, int>(
                   builder: (context, state) {
@@ -118,9 +131,16 @@ class _dashboardState extends State<dashboard> {
                 Expanded(
                     child: Align(
                         alignment: Alignment.centerRight,
-                        child: Image.asset(
-                          'assets/images/alaramwithorange.png',
-                          height: 26.sp,
+                        child: InkWell(
+                          onTap: ()
+                          {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> notificationscreen()));
+
+                          },
+                          child: Image.asset(
+                            'assets/images/alaramwithorange.png',
+                            height: 26.sp,
+                          ),
                         ))),
                 // const   Expanded(flex:0,child: Align( alignment: Alignment.topRight,child: Icon(BitborgIcons.brightness_1,color: Colors.deepOrange,)))
               ],
@@ -139,6 +159,7 @@ class _dashboardState extends State<dashboard> {
                 children: [
                   Container(
                     height: 700.h,
+                    width: 1.sw,
                     child: BlocBuilder<dashboardpageCubit, int>(
                       builder: (context, state) {
                         return PageView(
