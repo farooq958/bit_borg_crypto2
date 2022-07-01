@@ -3,6 +3,7 @@ import 'package:bit_borg_crypto/controllers/utils/Bitborgicons.dart';
 import 'package:bit_borg_crypto/controllers/utils/app_colors.dart';
 import 'package:bit_borg_crypto/controllers/utils/shared_components/sharedcomponent.dart';
 import 'package:bit_borg_crypto/model/signal_model.dart';
+import 'package:bit_borg_crypto/view/dashboard/signal_details_page/signalsdetailpage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -129,11 +130,16 @@ class _signalscreenState extends State<signalscreen> {
               SizedBox(
                 height: 0.02.sh,
               ),
-shareed.reusablecontainersignal(0,context,appcolors.targetsignalcolor, "Low Risk",'Hold'),
+InkWell(
+    onTap: (){
+      Navigator.push(context , MaterialPageRoute(builder: (context)=> const signalsdetailpage(check: 0,)));},
+    child: shareed.reusablecontainersignal(0,context,appcolors.targetsignalcolor, "Low Risk",'Hold')),
               SizedBox(
                 height: 0.01.sh,
               ),
-              shareed.reusablecontainersignal(0,context,Colors.red, "high risk",'scalp'),
+              InkWell(   onTap: (){
+    Navigator.push(context , MaterialPageRoute(builder: (context)=> const signalsdetailpage(check: 1,)));}
+    ,child: shareed.reusablecontainersignal(0,context,Colors.red, "high risk",'scalp')),
               SizedBox(
                 height: 0.009.sh,
               ),

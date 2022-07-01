@@ -82,7 +82,7 @@ class _dashboardState extends State<dashboard> {
     return Scaffold(
       drawer:  Drawer(
         backgroundColor: appcolors.primarycolor,
-child: sc.reusabledrawerchild(),
+child: sc.reusabledrawerchild(context),
 
       )
       ,

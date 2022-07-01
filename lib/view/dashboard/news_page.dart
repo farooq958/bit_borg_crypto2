@@ -119,9 +119,21 @@ var sharedc= sharedcomponent();
                           height: 0.02.sh,
                         ),
                        sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                        SizedBox(
+                          height: 0.02.sh,
+                        ),
                         sharedc.reusablecontainernews(context,appcolors.successcolor, 'Positive'),
-                        sharedc.reusablecontainernews(context,appcolors.lighttextcolor, 'Neutral'),
-                        sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+
+                        SizedBox(
+                          height: 0.02.sh,
+                        ), sharedc.reusablecontainernews(context,appcolors.lighttextcolor, 'Neutral'),
+
+                        SizedBox(
+                          height: 0.02.sh,
+                        ),sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                        SizedBox(
+                          height: 0.02.sh,
+                        ),
                       ],
                     ),
                   )
