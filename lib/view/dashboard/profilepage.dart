@@ -40,7 +40,7 @@ backgroundColor: appcolors.onboardingcontainercolor,
   
   title: sd.reusableappbar(context, "Profile"),
 ),
-body: Container(
+body: SizedBox(
     height: 1.sh,
     width: 1.sw,
 
@@ -110,7 +110,7 @@ children: [
 child: Row(
   children: <Widget>[
     
-    Expanded(child: Icon(BitborgIcons.user,color: Colors.white,)),
+    const Expanded(child: Icon(BitborgIcons.user,color: Colors.white,)),
     Expanded( flex:4,child: Text('Muzammil Afridi',style: GoogleFonts.montserrat(fontSize: 16.sp ,fontWeight: FontWeight.bold,color: Colors.white),))
     
   ],

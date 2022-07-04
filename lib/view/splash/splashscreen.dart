@@ -19,9 +19,9 @@ class _splashscreenState extends State<splashscreen> {
         lefttoright = true;
 
       });
-      Future.delayed(Duration(seconds: 2),(){
+      Future.delayed(const Duration(seconds: 2),(){
 setState(() {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => walkthroughpages() ));
+  Navigator.push(context, MaterialPageRoute(builder: (context) => const walkthroughpages() ));
 });
        // Navigator.push(context, MaterialPageRoute(builder: (context) => walkthroughpages() ));
       });
@@ -39,15 +39,16 @@ setState(() {
         color: appcolors.primarycolor,
         child: Stack(
           children: [
+
            AnimatedPositioned(duration: const Duration(milliseconds: 350),
            bottom: 1.0.sw,
-           right:lefttoright?210.sp:390.sp,  //190
+           right:lefttoright?215.sp:390.sp,  //190
            child: Image.asset('assets/images/splashimage1.png',height: 60.66.sp ,width: 79.9.sp,)),
 
             AnimatedPositioned(duration: const Duration(milliseconds: 350),
                 bottom: 1.0.sw,
 
-                left:lefttoright?170.sp:390.sp,  //190
+                left:lefttoright?  160.sp:390.sp,  //190
                 child: Column(
                   children: [
                      Expanded(flex: 0, child: Image.asset('assets/images/Splashimage2.png',width: 114.sp,height: 29.18.sp,)),

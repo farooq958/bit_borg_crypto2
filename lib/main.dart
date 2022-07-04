@@ -48,11 +48,13 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => signalCubit(0)),
           ],
           child: const MaterialApp(
+
             builder: DevicePreview.appBuilder,
             useInheritedMediaQuery: true,
             debugShowCheckedModeBanner: false,
             home: splashscreen(),
           ),
+
         );
       },
 

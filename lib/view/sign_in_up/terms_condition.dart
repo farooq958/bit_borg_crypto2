@@ -17,7 +17,7 @@ class _termandconditionState extends State<termandcondition> {
     String Text1 = "Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, along with exposition, argumentation, and narration. In practice it would be difficult to write literature that drew on just one of the four basic modes.";
     String Text2= "Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, along with exposition, argumentation, and narration. In practice it would be difficult to write literature that drew on just one of the four basic modes.";
     String Text3="Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, along with exposition, argumentation, and narration. In practice it would be difficult to write literature that drew on just one of the four basic modes.";
-    String Text4="Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, along with exposition, argumentation, and narration. In practice it would be difficult to write literature that drew on just one of the four basic modes.";
+ //   String Text4="Description is the pattern of narrative development that aims to make vivid a place, object, character, or group. Description is one of four rhetorical modes, along with exposition, argumentation, and narration. In practice it would be difficult to write literature that drew on just one of the four basic modes.";
     return   Scaffold(
       body: Container(
         height: 1.sh,
@@ -30,7 +30,7 @@ class _termandconditionState extends State<termandcondition> {
               Align(alignment:Alignment.bottomLeft,child: GestureDetector(onTap: (){
                 Navigator.pop(context);
               },
-                  child: Icon(BitborgIcons.arrow_right,color: Colors.white,size: 20,))),
+                  child: const Icon(BitborgIcons.arrow_right,color: Colors.white,size: 20,))),
 
               SizedBox(height: 0.02.sh),
               Text('Terms & Conditions',style: GoogleFonts.montserrat(fontSize: 24 ,color: Colors.white,fontWeight: FontWeight.bold),)

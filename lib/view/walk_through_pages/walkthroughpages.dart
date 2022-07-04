@@ -5,9 +5,7 @@ import 'package:bit_borg_crypto/controllers/walk_through_cubit.dart';
 import 'package:bit_borg_crypto/controllers/walk_through_cubit.dart';
 import 'package:bit_borg_crypto/model/walkthroughmodel.dart';
 import 'package:bit_borg_crypto/view/sign_in_up/login.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +36,7 @@ class _walkthroughpagesState extends State<walkthroughpages>
           child: Column(
             children: [
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: PageView.builder(
                   itemBuilder: (context, index) {
                     return Column(
@@ -96,33 +94,39 @@ class _walkthroughpagesState extends State<walkthroughpages>
                 ),
               ),
               Expanded(
-                flex: 0,
-                child: Container(
-                    width: 20 * walkthroughlist.length.toDouble(),
-                    height: 8.sp,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: walkthroughlist.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: index == state ? 20.sp : 10,
-                            height: 5.sp,
-                            margin: EdgeInsets.symmetric(horizontal: 2),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: index == state
-                                    ? appcolors.buttoncolor
-                                    : Colors.grey),
-                          );
-                        })),
-              ),
-              SizedBox(
-                height: 15.sp,
+                flex: 1,
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                      width: 20 * walkthroughlist.length.toDouble(),
+                      height: 8.sp,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: walkthroughlist.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              width: index == state ? 20.sp : 10,
+                              height: 5.sp,
+                              margin: const EdgeInsets.symmetric(horizontal: 2),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: index == state
+                                      ? appcolors.buttoncolor
+                                      : Colors.grey),
+                            );
+                          })),
+                ),
               ),
               Expanded(
-                  flex: 1,
+                flex: 0,
+                child: SizedBox(
+                  height: 2.sp,
+                ),
+              ),
+              Expanded(
+                  flex: 4,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: appcolors.onboardingcontainercolor,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(24),
@@ -318,14 +322,15 @@ class _walkthroughpagesState extends State<walkthroughpages>
                                   alignment: Alignment.topRight,
                                   child: GestureDetector(
                                     onTap: () {
-                                      if (state == 0)
+                                      if (state == 0) {
                                         pagecontroller.pgecontrler
                                             .jumpToPage(1);
-                                  else if(state==1)
-                                       pagecontroller.pgecontrler
+                                      } else if(state==1) {
+                                        pagecontroller.pgecontrler
                                            .jumpToPage(2);
-                                      else
-                                       Navigator.push(context, MaterialPageRoute(builder: (context) => Login() ));
+                                      } else {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Login() ));
+                                  }
 
                                     },
                                     child: CircularPercentIndicator(

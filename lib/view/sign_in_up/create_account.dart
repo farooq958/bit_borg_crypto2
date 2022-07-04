@@ -25,28 +25,6 @@ class _createaccountState extends State<createaccount> {
     "Dubai"
   ];
 
-  void Alerty(BuildContext context, String TTexty) {
-    var alertdialog = AlertDialog(
-        title: Text(TTexty),
-        content: DropdownButton<String>(
-          items: listofcountries.map((String dropdownstringitem) {
-            return DropdownMenuItem<String>(
-                value: dropdownstringitem, child: Text(dropdownstringitem));
-          }).toList(),
-          value: currentitem,
-          onChanged: (String? e) {
-            setState(() {
-              currentitem = e;
-            });
-          },
-        ));
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alertdialog;
-        });
-  }
-
   bool check2 = false;
   bool check1 = true;
   String? currentitem = "Country";
@@ -192,7 +170,7 @@ class _createaccountState extends State<createaccount> {
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(4),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         color: appcolors.lighttextcolor))),
                           ),
                         ),
@@ -389,7 +367,7 @@ class _createaccountState extends State<createaccount> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              termandcondition()));
+                                              const termandcondition()));
                                 },
                                 child: Text(
                                   "Terms and Conditions? ",
@@ -443,7 +421,7 @@ class _createaccountState extends State<createaccount> {
                                                       onTap: () {
                                                         Navigator.pop(context);
                                                       },
-                                                      child: Icon(
+                                                      child: const Icon(
                                                         BitborgIcons
                                                             .cross_circle,
                                                         color: appcolors

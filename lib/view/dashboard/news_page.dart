@@ -3,14 +3,12 @@ import 'package:bit_borg_crypto/controllers/newspage_cubit.dart';
 import 'package:bit_borg_crypto/controllers/utils/Bitborgicons.dart';
 import 'package:bit_borg_crypto/controllers/utils/app_colors.dart';
 import 'package:bit_borg_crypto/controllers/utils/shared_components/sharedcomponent.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../model/newsmodel.dart';
-import 'newspages/newsdetails.dart';
 
 
 class newsscreen extends StatefulWidget {
@@ -101,7 +99,7 @@ var sharedc= sharedcomponent();
               ),
             ),
             state == 0
-                ? Container(
+                ? SizedBox(
                     height: 600,
                     width: 400,
                     child: ListView(
@@ -118,19 +116,19 @@ var sharedc= sharedcomponent();
                         SizedBox(
                           height: 0.02.sh,
                         ),
-                       sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                       sharedc.reusablecontainernewS(context,appcolors.negativecolor, 'Negative'),
                         SizedBox(
                           height: 0.02.sh,
                         ),
-                        sharedc.reusablecontainernews(context,appcolors.successcolor, 'Positive'),
+                        sharedc.reusablecontainernewS(context,appcolors.successcolor, 'Positive'),
 
                         SizedBox(
                           height: 0.02.sh,
-                        ), sharedc.reusablecontainernews(context,appcolors.lighttextcolor, 'Neutral'),
+                        ), sharedc.reusablecontainernewS(context,appcolors.lighttextcolor, 'Neutral'),
 
                         SizedBox(
                           height: 0.02.sh,
-                        ),sharedc.reusablecontainernews(context,appcolors.negativecolor, 'Negative'),
+                        ),sharedc.reusablecontainernewS(context,appcolors.negativecolor, 'Negative'),
                         SizedBox(
                           height: 0.02.sh,
                         ),
@@ -139,7 +137,7 @@ var sharedc= sharedcomponent();
                   )
                 : state == 1
                     ? //favoritecoin page
-                    Container(
+                    SizedBox(
                         height: 600,
                         width: 400,
                         child: BlocBuilder<alertCubit, bool>(
@@ -158,9 +156,9 @@ var sharedc= sharedcomponent();
                                       Icons.favorite_border_outlined,
                                       color: Colors.white,
                                     )):
-                                Expanded(
+                                const Expanded(
                                   flex:0,
-                                  child: Container(height: 0,width: 0,),),
+                                  child: SizedBox(height: 0,width: 0,),),
 
                                 SizedBox(
                                   width: 0.01.sh,
@@ -174,7 +172,7 @@ var sharedc= sharedcomponent();
                                         child: InkWell(
                                           onTap: () {
                                             context.read<alertCubit>().boolcheck(state: true);
-                                         sharedc.Alerty(context, "Favourite Coins", "3 Coins Found",'assets/images/Group 1107.png',1,0);
+                                         sharedc.alertY(context, "Favourite Coins", "3 Coins Found",'assets/images/Group 1107.png',1,0);
                                           },
                                           child: Text(
                                             'Favourite Coins',
@@ -201,7 +199,7 @@ var sharedc= sharedcomponent();
                                           {
                                             context.read<alertCubit>().boolcheck(state: true);
 
-                                        sharedc.Alerty(context, "Add Your Favourite Coins", "E.g BTC, Eth, BNB etc","assets/images/bitcoingroup.png",0,0);
+                                        sharedc.alertY(context, "Add Your Favourite Coins", "E.g BTC, Eth, BNB etc","assets/images/bitcoingroup.png",0,0);
                                           },
                                           child: Text(
                                             '+ Add Coin',
@@ -223,23 +221,23 @@ var sharedc= sharedcomponent();
                                   fontWeight: FontWeight.w200),
                             )
                             :
-        SizedBox(height: 0,width: 0,),
+        const SizedBox(height: 0,width: 0,),
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.reusablecontainernews(
+                            sharedc.reusablecontainernewS(
                                 context,appcolors.negativecolor, 'Negative'),
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.reusablecontainernews(
+                            sharedc.reusablecontainernewS(
                                 context, appcolors.successcolor, 'Positive'),
                             SizedBox(
                               height: 0.02.sh,
                             ),
-                            sharedc.reusablecontainernews(
+                            sharedc.reusablecontainernewS(
                                 context, appcolors.lighttextcolor, 'Neutral'),
-                            sharedc.reusablecontainernews(
+                            sharedc.reusablecontainernewS(
                                 context, appcolors.negativecolor, 'Negative'),
                           ],
                         );
